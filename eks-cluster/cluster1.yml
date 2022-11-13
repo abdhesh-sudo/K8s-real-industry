@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: staging
+  region: ap-south-1
+  version: "1.21"
+nodeGroups:
+- name: staging-node
+  instanceType: t3.large
+  desiredCapacity: 3
+  minSize: 3
+  maxSize: 6
+

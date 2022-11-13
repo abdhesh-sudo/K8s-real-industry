@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: prod
+  region: ap-south-1
+  version: "1.21"
+managedNodeGroups:
+- name: manage-node
+  ami: ami-049a2aab6e87ad4a6
+  overrideBootstrapCommand: |
+      /etc/eks/bootstrap.sh prod
+  instanceType: t3.large
+  minSize: 3
+  maxSize: 6
+  spot: true
+
+
